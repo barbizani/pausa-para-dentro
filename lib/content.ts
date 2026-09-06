@@ -44,7 +44,7 @@ export const UNIAO = {
     {
       name: "Educar com Amor e Consciência",
       logo: "/logos/ga.png",
-      text: "Olha para a educação e para a parentalidade consciente, ajudando famílias e educadores a viver com mais presença, intenção e humanidade.",
+      text: "Olha para a educação a partir de quem educa, promovendo consciência, bem-estar, relações mais humanas e práticas educativas mais inclusivas, através de formação, reflexão e ferramentas que geram mudança.",
     },
     {
       name: "Colo di Mama",
