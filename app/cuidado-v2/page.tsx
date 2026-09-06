@@ -308,9 +308,15 @@ export default function Cuidado() {
               {FACILITADORES.intro}
             </p>
           </Reveal>
-          <div className="mt-14 grid grid-cols-2 gap-5 md:grid-cols-3 lg:grid-cols-4">
+          {/* flex + wrap (em vez de grid) para que a última linha incompleta
+              fique centrada em vez de alinhada à esquerda com espaço vazio */}
+          <div className="mt-14 flex flex-wrap justify-center gap-5">
             {FACILITADORES.pessoas.map((pessoa, i) => (
-              <Reveal key={pessoa.slug} delay={i * 0.05}>
+              <Reveal
+                key={pessoa.slug}
+                delay={i * 0.05}
+                className="h-full w-[calc(50%-10px)] md:w-[calc(33.333%-13.34px)] lg:w-[calc(25%-15px)]"
+              >
                 <FacilitadorCard pessoa={pessoa} base={BASE} />
               </Reveal>
             ))}

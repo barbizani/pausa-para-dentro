@@ -54,7 +54,7 @@ export const UNIAO = {
     {
       name: "Men Talks",
       logo: "/logos/mentalks.svg",
-      text: "Cria espaço para conversas que muitas vezes não acontecem sobre emoções, presença, relações e novas formas de masculinidade consciente. Promove espaços de reflexão sobre masculinidades para construir uma sociedade mais igualitária, através do desenvolvimento de competências socioemocionais, da promoção da igualdade de género, da prevenção da violência e do respeito pela diversidade.",
+      text: "Cria espaço para conversas que muitas vezes não acontecem sobre emoções, presença, relações e novas formas de masculinidade consciente. Promove espaços de reflexão sobre masculinidades para construir uma sociedade mais igualitária.",
     },
   ],
   close:
