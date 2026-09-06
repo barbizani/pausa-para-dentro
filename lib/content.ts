@@ -49,12 +49,12 @@ export const UNIAO = {
     {
       name: "Colo di Mama",
       logo: "/logos/colodimama.png",
-      text: "Traz o cuidado, o vínculo e o acolhimento como base do desenvolvimento humano.",
+      text: "Promove a reflexão sobre a forma como educamos, o impacto que temos na formação das crianças e o legado que transmitimos às próximas gerações. Traz o cuidado, o vínculo e o acolhimento como base do desenvolvimento humano.",
     },
     {
       name: "Men Talks",
       logo: "/logos/mentalks.svg",
-      text: "Cria espaço para conversas que muitas vezes não acontecem — sobre emoções, presença, relações e novas formas de masculinidade consciente.",
+      text: "Cria espaço para conversas que muitas vezes não acontecem sobre emoções, presença, relações e novas formas de masculinidade consciente. Promove espaços de reflexão sobre masculinidades para construir uma sociedade mais igualitária, através do desenvolvimento de competências socioemocionais, da promoção da igualdade de género, da prevenção da violência e do respeito pela diversidade.",
     },
   ],
   close:
@@ -347,6 +347,16 @@ export const LEGACY_PROGRAMA = {
   ],
   close: "Encerramento em círculo. Silêncio. Integração.",
   note: "* Alinhamento ainda em construção — programa indicativo.",
+};
+
+export const PARCEIROS = {
+  eyebrow: "Parceiros",
+  title: "Quem torna este dia possível.",
+  logos: [
+    { nome: "Villoo", logo: "/logos/villoo.png" },
+    { nome: "Academia Bernardo da Costa", logo: "/logos/academia-bc.png" },
+    { nome: "Fundação Maria Droste", logo: "/logos/fundacao-maria-droste.svg" },
+  ],
 };
 
 export const QUEM = {
