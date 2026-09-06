@@ -39,6 +39,10 @@ yarn-error.log*
 # claude code local tooling
 .claude
 
+# material bruto dos facilitadores (fotos originais, PDFs de bio) — não publicar;
+# só os ativos processados em public/facilitadores/ e public/logos/ vão para o site
+/public/facilidatoras
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

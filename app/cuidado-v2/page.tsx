@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { Reveal } from "@/components/Reveal";
+import { FacilitadorCard } from "@/components/FacilitadorCard";
 import {
   EVENT,
   CONTEXT,
@@ -12,6 +13,7 @@ import {
   OQUEE,
   DIFER,
   PROGRAMA,
+  FACILITADORES,
   QUEM,
   FINAL,
 } from "@/lib/content";
@@ -360,6 +362,33 @@ export default function Cuidado() {
                     )}
                   </div>
                 </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FACILITADORES */}
+      <section className="px-6 py-28 md:px-10 md:py-36" style={{ background: "linear-gradient(180deg,#f3f5f2,#eaf0eb)" }}>
+        <div className="mx-auto max-w-5xl">
+          <Reveal className="text-center"><Eyebrow>{FACILITADORES.eyebrow}</Eyebrow></Reveal>
+          <Reveal>
+            <h2
+              style={{ fontFamily: "var(--font-cormorant)" }}
+              className="mt-6 text-center text-4xl md:text-5xl"
+            >
+              {FACILITADORES.title}
+            </h2>
+          </Reveal>
+          <Reveal>
+            <p className="mx-auto mt-5 max-w-md text-center text-[15px] text-[#4a5a57]">
+              {FACILITADORES.intro}
+            </p>
+          </Reveal>
+          <div className="mt-14 grid grid-cols-2 gap-5 md:grid-cols-3 lg:grid-cols-4">
+            {FACILITADORES.pessoas.map((pessoa, i) => (
+              <Reveal key={pessoa.slug} delay={i * 0.05}>
+                <FacilitadorCard pessoa={pessoa} base={BASE} />
               </Reveal>
             ))}
           </div>

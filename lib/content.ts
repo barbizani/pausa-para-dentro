@@ -217,6 +217,123 @@ export const PROGRAMA = {
   ],
 };
 
+export type Facilitador = {
+  slug: string;
+  nome: string;
+  papel: string;
+  foto: string;
+  bioCurta: string;
+  bioLonga: string[];
+  organizacao: { nome: string; logo: string };
+};
+
+export const FACILITADORES = {
+  eyebrow: "Quem facilita",
+  title: "As pessoas que conduzem o dia.",
+  intro:
+    "Toca num nome para leres a versão alargada — percurso, formação e o projeto que traz até ao Pausa para Dentro.",
+  pessoas: [
+    {
+      slug: "georgina-angelica",
+      nome: "Georgina Angélica",
+      papel: "Chegada, abertura e encerramento",
+      foto: "/facilitadores/georgina.png",
+      bioCurta:
+        "Consultora, formadora e palestrante, com mais de 20 anos de experiência em Portugal, Inglaterra e Angola. Fundadora do Educar com Amor e Consciência.",
+      bioLonga: [
+        "Georgina Angélica trabalha na interseção entre educação, intervenção social, desenvolvimento humano e transformação social.",
+        "É consultora, formadora e palestrante, com mais de 20 anos de experiência em Portugal, Inglaterra e Angola. É fundadora do Educar com Amor e Consciência e cocriadora d'O Tal Podcast, espaços através dos quais promove reflexão, diálogo e transformação em torno da educação, das relações humanas, da diversidade e da inclusão.",
+      ],
+      organizacao: { nome: "Educar com Amor e Consciência", logo: "/logos/ga.png" },
+    },
+    {
+      slug: "paulo-vieira",
+      nome: "Paulo Vieira",
+      papel: "Workshop · Consciência",
+      foto: "/facilitadores/paulo.png",
+      bioCurta:
+        "Professor de Hatha Yoga e facilitador de práticas de respiração consciente, com mais de 20 anos de trabalho em saúde, inclusão social e desenvolvimento comunitário.",
+      bioLonga: [
+        "Paulo Vieira trabalha há mais de 20 anos nas áreas da saúde, inclusão social, educação, participação e desenvolvimento comunitário, colaborando com organizações da sociedade civil, fundações e programas públicos. O seu percurso inclui também o ativismo e o trabalho em torno da diversidade, pertença e justiça social.",
+        "É licenciado em Desenvolvimento Comunitário e Saúde Mental, mestre em Estudos de Migração e pós-graduado em Gestão e Avaliação de Projetos. É professor de Hatha Yoga e facilitador de práticas de respiração consciente.",
+        "É deste cruzamento entre bem-estar, desenvolvimento humano e intervenção social que nasce também o seu trabalho através da UNO Yoga & Breathwork, procurando criar espaços acessíveis de presença, autorregulação e bem-estar, em diferentes pessoas e contextos.",
+      ],
+      organizacao: { nome: "UNO Yoga & Breathwork", logo: "/logos/uno-yoga-breathwork.png" },
+    },
+    {
+      slug: "nathalie-marques",
+      nome: "Nathalie Marques",
+      papel: "Workshop · Comunicação",
+      foto: "/facilitadores/nathalie.png",
+      bioCurta:
+        "Psicóloga clínica, especialista em Psicologia Clínica e da Saúde, e fundadora do Centro Impacto – Psicologia e Desenvolvimento Infantojuvenil.",
+      bioLonga: [
+        "Nathalie Marques é psicóloga clínica desde 2011, formada pelo ISPA e especialista em Psicologia Clínica e da Saúde pela Ordem dos Psicólogos Portugueses desde 2019.",
+        "É fundadora do Centro Impacto – Psicologia e Desenvolvimento Infantojuvenil, onde acompanha crianças e jovens em articulação próxima com famílias e escolas, promovendo o seu desenvolvimento e bem-estar psicológico.",
+        "Para além da prática clínica, dinamiza workshops, ateliês das emoções, formações e palestras. É também mentora de psicólogos, supervisora de estágios e coordenadora de uma equipa multidisciplinar.",
+        "Apaixonada por saúde psicológica, literacia emocional, formação e criação de parcerias, procura desenvolver projetos que aproximem a psicologia das crianças, jovens, famílias e profissionais.",
+      ],
+      organizacao: { nome: "Centro Impacto", logo: "/logos/centro-impacto.png" },
+    },
+    {
+      slug: "ines-sottomayor",
+      nome: "Inês Sottomayor",
+      papel: "Workshop · Organização",
+      foto: "/facilitadores/ines.png",
+      bioCurta:
+        "Arquitecta de Sonhos. Especialista no desenvolvimento de competências emocionais e comportamentais de crianças, jovens, famílias e educadores, criadora do Método DREAM®.",
+      bioLonga: [
+        "Especialista no desenvolvimento de competências emocionais e comportamentais de crianças, jovens, famílias e educadores, particularmente no impacto das competências humanas e das emoções no bem-estar subjetivo e social. Com base no seu método próprio — o Método DREAM®, que integra ciência, prática e transformação real — trabalha diariamente para construir ambientes mais saudáveis, conscientes e equilibrados no contexto familiar e educativo.",
+        "Com uma formação multidisciplinar que inclui pós-graduação em Psicologia Positiva, Coaching Infantojuvenil, Neurociência Aplicada, a realizar um doutoramento em Psicologia das Emoções e do Bem-estar, certificada na metodologia LEGO® SERIOUS PLAY® e PointsofYou®. É também autora do livro Aprender a Ser e tem contribuições em co-autoria noutros livros, criadora de ferramentas práticas de Psicologia Positiva como o baralho Dreams Come True, utilizadas por centenas de famílias e profissionais em Portugal.",
+        "Atualmente CEO da empresa Inês Sottomayor Arquiteta de Sonhos e fundadora do espaço Dreamers em Carcavelos.",
+        "Após anos a projetar espaços físicos enquanto arquiteta, encontrou no desenvolvimento humano a verdadeira paixão: ajudar pessoas a desenhar sonhos com propósito, estrutura e emoção. É esse olhar estruturado e sensível que orienta o seu trabalho — onde cada projeto se transforma num passo concreto para uma vida mais equilibrada e realizada.",
+      ],
+      organizacao: { nome: "Inês Sottomayor · Arquiteta de Sonhos", logo: "/logos/ines-sottomayor.png" },
+    },
+    {
+      slug: "virgilio-varela",
+      nome: "Virgílio Varela",
+      papel: "Workshop · Liderança",
+      foto: "/facilitadores/virgilio.png",
+      bioCurta:
+        "Fundador e consultor principal da HumanFleet. Diretor Executivo de Desenvolvimento do CEM Portugal e Fellow da Earth One Global Alliance.",
+      bioLonga: [
+        "Virgílio Varela é fundador e consultor principal da HumanFleet, consultora de estratégia e facilitação que desde 2014 acompanha organizações, comunidades e territórios em processos de transformação. É Diretor Executivo de Desenvolvimento do CEM Portugal – Centro Europeu de Música, no Palácio Nacional de Mafra, e Fellow da Earth One Global Alliance.",
+        "Formado em Educação, Língua e Etnicidades pelo King's College London, trabalha entre Portugal, EUA, Reino Unido, Brasil, Cabo Verde, São Tomé e Príncipe e Moçambique. Desenhou e facilitou a primeira Assembleia de Cidadãos pelo Clima de Lisboa, programas de liderança na BA Glass, NOS e Bosch, a Academia do Futuro do Trabalho (ONU/Governo de Cabo Verde) e processos para a Comissão Europeia.",
+        "Com a Taproot Earth, conduz trabalho de escuta e governação coletiva junto de comunidades quilombolas e indígenas no Brasil. Atualmente facilita o Laboratório da Imaginação no CAM–Gulbenkian.",
+      ],
+      organizacao: { nome: "HumanFleet", logo: "/logos/humanfleet.png" },
+    },
+    {
+      slug: "cristina-figueira",
+      nome: "Cristina Figueira",
+      papel: "Integração & encerramento",
+      foto: "/facilitadores/cristina.png",
+      bioCurta:
+        "Colabora na Associação MenTalks na criação e facilitação de projetos que promovem relações humanas mais igualitárias.",
+      bioLonga: [
+        "Cristina Figueira colabora na Associação MenTalks na criação e facilitação de projetos que promovem relações humanas mais igualitárias, através do desenvolvimento de competências socioemocionais, da promoção da igualdade de género, da prevenção da violência e do respeito pela diversidade.",
+        "Em paralelo, desenvolve iniciativas na área da parentalidade, em escolas e junto de famílias.",
+        "Acredita que transformar relações humanas é uma das formas mais poderosas de transformar o mundo.",
+      ],
+      organizacao: { nome: "Associação Men Talks", logo: "/logos/mentalks.svg" },
+    },
+    {
+      slug: "angela-almeida",
+      nome: "Ângela Almeida",
+      papel: "Integração & encerramento",
+      foto: "/facilitadores/angela.png",
+      bioCurta:
+        "Fundadora do Colo di Mamá e técnica social, com formação em Animação Sociocultural e Gestão de Recursos Humanos.",
+      bioLonga: [
+        "Ângela Almeida é fundadora do Colo di Mamá e técnica social, com formação em Animação Sociocultural e Gestão de Recursos Humanos.",
+        "A sua experiência profissional e o trabalho direto com famílias, jovens e comunidades cruzam-se com a missão do Colo: criar espaços de reflexão, diálogo e consciência sobre a educação e as relações que construímos.",
+      ],
+      organizacao: { nome: "Colo di Mamá", logo: "/logos/colodimama.png" },
+    },
+  ] satisfies Facilitador[],
+};
+
 // Congelado: shape antigo do PROGRAMA, usado só pelas propostas arquivadas em
 // app/_archive (abraco, cuidado v1, sorriso). Não atualizar — são histórico.
 export const LEGACY_PROGRAMA = {
