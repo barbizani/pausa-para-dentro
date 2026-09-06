@@ -6,7 +6,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { Reveal } from "@/components/Reveal";
 import {
-  EVENT, CONTEXT, NASCIMENTO, UNIAO, OQUEE, DIFER, PROGRAMA, QUEM, FINAL,
+  EVENT, CONTEXT, NASCIMENTO, UNIAO, OQUEE, DIFER, LEGACY_PROGRAMA as PROGRAMA, QUEM, FINAL,
 } from "@/lib/content";
 
 const HERO = "https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=2000&q=80&auto=format&fit=crop";

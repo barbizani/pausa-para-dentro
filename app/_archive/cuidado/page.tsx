@@ -12,7 +12,7 @@ import {
   UNIAO,
   OQUEE,
   DIFER,
-  PROGRAMA,
+  LEGACY_PROGRAMA as PROGRAMA,
   QUEM,
   FINAL,
 } from "@/lib/content";

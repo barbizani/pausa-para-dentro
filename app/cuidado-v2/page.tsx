@@ -310,23 +310,41 @@ export default function Cuidado() {
         <div className="mx-auto max-w-2xl">
           <Reveal><Eyebrow>{PROGRAMA.eyebrow}</Eyebrow></Reveal>
           <Reveal><h2 style={{ fontFamily: "var(--font-cormorant)" }} className="mt-6 text-4xl md:text-5xl">{PROGRAMA.title}</h2></Reveal>
+          <Reveal>
+            <div className="mt-6 space-y-3">
+              {PROGRAMA.intro.map((line) => (
+                <p key={line} className="text-[16px] text-[#4a5a57]">{line}</p>
+              ))}
+            </div>
+          </Reveal>
           <div className="mt-12 border-t" style={{ borderColor: "rgba(35,77,87,.15)" }}>
             {PROGRAMA.blocos.map((b, i) => (
-              <Reveal key={b.title} delay={i * 0.06}>
+              <Reveal key={b.label} delay={i * 0.06}>
                 <div className="grid grid-cols-[110px_1fr] gap-6 border-b py-7" style={{ borderColor: "rgba(35,77,87,.15)" }}>
                   <div style={{ fontFamily: "var(--font-cormorant)" }} className="text-lg italic" >{b.time}</div>
                   <div>
-                    <h3 style={{ fontFamily: "var(--font-cormorant)" }} className="text-xl">{b.title}</h3>
-                    <p className="mt-1 text-[16px] text-[#4a5a57]">{b.desc}</p>
+                    <span style={{ fontFamily: "var(--font-roboto)", color: "#5d8a82" }} className="text-[11px] font-medium tracking-[0.22em] uppercase">
+                      {b.label}
+                    </span>
+                    {"title" in b && b.title && (
+                      <h3 style={{ fontFamily: "var(--font-cormorant)" }} className="mt-1 text-xl">{b.title}</h3>
+                    )}
+                    <div className="mt-2 space-y-2">
+                      {b.desc.map((line) => (
+                        <p key={line} className="text-[16px] text-[#4a5a57]">{line}</p>
+                      ))}
+                    </div>
+                    {"facilitador" in b && b.facilitador && (
+                      <p style={{ fontFamily: "var(--font-cormorant)", color: T.teal }} className="mt-3 text-[15px] italic">
+                        {b.facilitador}
+                      </p>
+                    )}
                   </div>
                 </div>
               </Reveal>
             ))}
           </div>
-          <Reveal>
-            <p style={{ fontFamily: "var(--font-cormorant)", color: T.teal }} className="mt-10 text-center text-xl italic">{PROGRAMA.close}</p>
-          </Reveal>
-          <Reveal><p className="mt-4 text-center text-xs text-[#8aa19a]">{PROGRAMA.note}</p></Reveal>
+          <Reveal><p className="mt-6 text-center text-xs text-[#8aa19a]">{PROGRAMA.note}</p></Reveal>
         </div>
       </section>
 

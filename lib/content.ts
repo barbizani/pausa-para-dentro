@@ -95,6 +95,82 @@ export const DIFER = {
 export const PROGRAMA = {
   eyebrow: "O dia",
   title: "Um dia para parar e regressar ao essencial.",
+  intro: [
+    "Um dia para parar, respirar, escutar, reorganizar e transformar.",
+    "Um percurso de experiências e reflexão assente em quatro pilares: Consciência · Comunicação · Organização · Liderança.",
+  ],
+  blocos: [
+    {
+      time: "10H",
+      label: "Chegada & aterragem",
+      desc: ["Uma prática de presença, respiração e conexão com o momento."],
+    },
+    {
+      time: "10H20",
+      label: "Abertura",
+      desc: ["O propósito do Pausa para Dentro e a ligação entre os projetos que tornam este dia possível."],
+    },
+    {
+      time: "10H30",
+      label: "Workshop · Consciência",
+      title: "Introdução à respiração consciente",
+      desc: ["Presença, autorregulação e conexão."],
+      facilitador: "Facilitador: Paulo Vieira",
+    },
+    {
+      time: "11H40",
+      label: "Workshop · Comunicação",
+      title: "O que comunicamos quando não estamos a falar?",
+      desc: [
+        "Uma experiência sobre emoções, escuta, neurodiversidade e relações conscientes, para descobrir novas formas de comunicar e de estar com o outro.",
+      ],
+      facilitador: "Facilitadora: Nathalie Marques",
+    },
+    {
+      time: "12H30",
+      label: "Almoço consciente",
+      desc: ["Tempo para nutrir o corpo, conversar e refletir."],
+    },
+    {
+      time: "13H30",
+      label: "Workshop · Organização",
+      title: "Cuidar da energia e estabelecer limites",
+      desc: ["Limites, micro-pausas, organização emocional e prevenção da exaustão."],
+      facilitador: "Facilitadora: Inês Sottomayor",
+    },
+    {
+      time: "14H30",
+      label: "Workshop · Liderança",
+      title: "A Jaula, a Pausa, a Escolha",
+      desc: [
+        "Uma imersão experiencial sobre liderança consciente, masculinidades e responsabilidade, para reconhecer os guiões que herdamos, aprender a parar e escolher como queremos estar, relacionar-nos e liderar.",
+      ],
+      facilitador: "Facilitador: Virgílio Varela",
+    },
+    {
+      time: "15H30",
+      label: "Integração & encerramento",
+      desc: ["Um momento para transformar descobertas em intenção e escolher uma pequena mudança para levar consigo."],
+      facilitador: "Facilitadoras: Georgina Angélica · Ângela Almeida · Cristina Figueira",
+    },
+    {
+      time: "16H–17H",
+      label: "Slow leaving",
+      desc: [
+        "O programa termina, mas não temos pressa para ir embora.",
+        "Um espaço para conversar, conectar, colocar perguntas, escrever ou simplesmente permanecer.",
+        "Porque uma pausa também precisa de tempo para terminar.",
+      ],
+    },
+  ],
+  note: "* Alinhamento ainda em construção — programa indicativo.",
+};
+
+// Congelado: shape antigo do PROGRAMA, usado só pelas propostas arquivadas em
+// app/_archive (abraco, cuidado v1, sorriso). Não atualizar — são histórico.
+export const LEGACY_PROGRAMA = {
+  eyebrow: "O dia",
+  title: "Um dia para parar e regressar ao essencial.",
   blocos: [
     { time: "10h00", title: "Chegada e aterragem", desc: "Consciência e presença." },
     { time: "Manhã", title: "Comunicação e relações", desc: "Escuta, ligação e parentalidade." },
