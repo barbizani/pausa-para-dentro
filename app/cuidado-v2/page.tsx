@@ -334,6 +334,25 @@ export default function Cuidado() {
                         <p key={line} className="text-[16px] text-[#4a5a57]">{line}</p>
                       ))}
                     </div>
+                    {"perguntas" in b && b.perguntas && (
+                      <ul className="mt-2 space-y-1.5 border-l pl-4" style={{ borderColor: "rgba(35,77,87,.2)" }}>
+                        {b.perguntas.map((q) => (
+                          <li key={q} style={{ fontFamily: "var(--font-cormorant)" }} className="text-[16px] italic text-[#4a5a57]">
+                            {q}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                    {"movimentos" in b && b.movimentos && (
+                      <ul className="mt-3 space-y-3">
+                        {b.movimentos.map((m) => (
+                          <li key={m} className="text-[16px] text-[#4a5a57]">{m}</li>
+                        ))}
+                      </ul>
+                    )}
+                    {"descFinal" in b && b.descFinal && (
+                      <p className="mt-3 text-[16px] text-[#4a5a57]">{b.descFinal}</p>
+                    )}
                     {"facilitador" in b && b.facilitador && (
                       <p style={{ fontFamily: "var(--font-cormorant)", color: T.teal }} className="mt-3 text-[15px] italic">
                         {b.facilitador}
@@ -344,7 +363,6 @@ export default function Cuidado() {
               </Reveal>
             ))}
           </div>
-          <Reveal><p className="mt-6 text-center text-xs text-[#8aa19a]">{PROGRAMA.note}</p></Reveal>
         </div>
       </section>
 

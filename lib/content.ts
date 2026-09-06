@@ -94,76 +94,127 @@ export const DIFER = {
 
 export const PROGRAMA = {
   eyebrow: "O dia",
-  title: "Um dia para parar e regressar ao essencial.",
+  title: "Um dia para parar, respirar, escutar, reorganizar e transformar.",
   intro: [
-    "Um dia para parar, respirar, escutar, reorganizar e transformar.",
-    "Um percurso de experiências e reflexão assente em quatro pilares: Consciência · Comunicação · Organização · Liderança.",
+    "Um percurso de experiências, reflexão e prática, construído a partir de quatro pilares: Consciência, Comunicação, Organização e Liderança.",
   ],
   blocos: [
     {
       time: "10H",
       label: "Chegada & aterragem",
-      desc: ["Uma prática de presença, respiração e conexão com o momento."],
+      desc: [
+        "Começamos devagar. Antes de fazer, precisamos de chegar.",
+        "Um momento para desacelerar, cultivar o silêncio e trazer a atenção para o corpo, para a respiração e para o presente.",
+      ],
+      facilitador: "Facilitadora: Georgina Angélica",
     },
     {
       time: "10H20",
       label: "Abertura",
-      desc: ["O propósito do Pausa para Dentro e a ligação entre os projetos que tornam este dia possível."],
+      desc: [
+        "Porque fazemos esta pausa?",
+        "Um momento de abertura e acolhimento com Georgina Angélica, Cristina Figueira, Ângela Almeida e representante da Fundação Maria Droste.",
+        "Apresentação do propósito do Pausa para Dentro, da ligação entre os três projetos e da intenção que nos reúne neste dia.",
+      ],
     },
     {
-      time: "10H30",
-      label: "Workshop · Consciência",
-      title: "Introdução à respiração consciente",
-      desc: ["Presença, autorregulação e conexão."],
+      time: "10H30–11H30",
+      label: "Consciência",
+      title: "Workshop: Introdução à respiração consciente",
+      desc: [
+        "Uma experiência prática para compreender a respiração como ferramenta de presença, autorregulação e conexão connosco próprios.",
+      ],
       facilitador: "Facilitador: Paulo Vieira",
     },
     {
-      time: "11H40",
-      label: "Workshop · Comunicação",
-      title: "O que comunicamos quando não estamos a falar?",
+      time: "11H30–11H40",
+      label: "Pausa",
+      desc: ["10 minutos para integrar a experiência, respirar, conversar ou simplesmente estar."],
+    },
+    {
+      time: "11H40–12H30",
+      label: "Comunicação",
+      title: "Workshop: O que comunicamos quando não estamos a falar?",
       desc: [
-        "Uma experiência sobre emoções, escuta, neurodiversidade e relações conscientes, para descobrir novas formas de comunicar e de estar com o outro.",
+        "A comunicação começa antes das palavras. Como estamos nas relações quando estamos cansados, sobrecarregados ou emocionalmente desafiados? Como escutamos quando somos confrontados? E o que acontece quando o outro sente, processa ou comunica de uma forma diferente da nossa?",
+        "Uma experiência sobre comunicação emocional, neurodiversidade, escuta, relações conscientes, limites e o impacto que temos no outro.",
       ],
       facilitador: "Facilitadora: Nathalie Marques",
     },
     {
-      time: "12H30",
+      time: "12H30–13H30",
       label: "Almoço consciente",
-      desc: ["Tempo para nutrir o corpo, conversar e refletir."],
+      desc: [
+        "Tempo para nutrir o corpo e continuar a conversa.",
+        "Um almoço sem pressa, acompanhado de perguntas que convidam à reflexão:",
+      ],
+      perguntas: [
+        "O que tens aprendido sobre cuidar?",
+        "O que precisas de desaprender?",
+        "Que relação gostarias de transformar?",
+        "Quando foi a última vez que fizeste uma pausa verdadeira?",
+      ],
     },
     {
-      time: "13H30",
-      label: "Workshop · Organização",
-      title: "Cuidar da energia e estabelecer limites",
-      desc: ["Limites, micro-pausas, organização emocional e prevenção da exaustão."],
+      time: "13H30–14H20",
+      label: "Organização",
+      title: "Workshop: Cuidar da energia, estabelecer limites e prevenir a exaustão",
+      desc: [
+        "Uma experiência prática sobre limites, micro-pausas, organização emocional, gestão de energia e prevenção da exaustão.",
+      ],
       facilitador: "Facilitadora: Inês Sottomayor",
     },
     {
-      time: "14H30",
-      label: "Workshop · Liderança",
-      title: "A Jaula, a Pausa, a Escolha",
+      time: "14H20–14H25",
+      label: "Regresso ao presente",
+      title: "5 minutos de prática de regulação",
+      desc: ["Uma breve prática para voltar ao corpo, recentrar a atenção e preparar o regresso à experiência."],
+    },
+    {
+      time: "14H30–15H30",
+      label: "Liderança",
+      title: "Workshop: A Jaula, A Pausa, A Escolha",
       desc: [
-        "Uma imersão experiencial sobre liderança consciente, masculinidades e responsabilidade, para reconhecer os guiões que herdamos, aprender a parar e escolher como queremos estar, relacionar-nos e liderar.",
+        "Uma imersão experiencial de 60 minutos sobre liderança consciente e masculinidades, para refletir sobre os guiões que herdamos, a capacidade de parar e o poder de escolher como queremos estar e liderar.",
+        "Através de exercícios individuais, em pares e em pequenos grupos, vamos percorrer três movimentos:",
       ],
+      movimentos: [
+        "A Jaula — reconhecer os guiões que aprendemos sobre o que significa ser homem e como estes influenciam a forma como nos relacionamos, lideramos e ocupamos espaço.",
+        "A Pausa — experimentar o parar como uma competência de liderança: criar espaço para escutar, reconhecer limites e dizer «basta» ao que já não queremos continuar a alimentar.",
+        "A Escolha — identificar o que este momento nos pede e transformar essa consciência numa decisão concreta, através de um compromisso pequeno, datado e partilhado.",
+      ],
+      descFinal:
+        "Uma experiência sobre responsabilidade, presença, masculinidades conscientes e liderança, que termina com três práticas concretas para levar para a vida: uma pausa diária, um «basta» semanal e uma promessa com testemunha.",
       facilitador: "Facilitador: Virgílio Varela",
     },
     {
-      time: "15H30",
+      time: "15H25–16H",
       label: "Integração & encerramento",
-      desc: ["Um momento para transformar descobertas em intenção e escolher uma pequena mudança para levar consigo."],
+      desc: [
+        "O que faço com aquilo que descobri?",
+        "Um momento final para transformar reflexão em intenção e identificar uma pequena mudança concreta que cada pessoa quer levar consigo:",
+      ],
+      perguntas: [
+        "O que levas contigo?",
+        "Que pequena mudança vais aplicar?",
+        "O que queres cuidar melhor?",
+        "Onde precisas de mais consciência na tua vida?",
+      ],
+      descFinal:
+        "Encerramos com um ritual simples e humano: palavra final · silêncio · música · agradecimento · respiração.",
       facilitador: "Facilitadoras: Georgina Angélica · Ângela Almeida · Cristina Figueira",
     },
     {
       time: "16H–17H",
       label: "Slow leaving",
       desc: [
-        "O programa termina, mas não temos pressa para ir embora.",
-        "Um espaço para conversar, conectar, colocar perguntas, escrever ou simplesmente permanecer.",
+        "Não temos pressa para ir embora.",
+        "O programa termina às 16H, mas a experiência pode continuar.",
+        "Um espaço informal e aberto para conectar, conversar, fazer networking, colocar perguntas aos facilitadores, escrever no diário ou simplesmente permanecer.",
         "Porque uma pausa também precisa de tempo para terminar.",
       ],
     },
   ],
-  note: "* Alinhamento ainda em construção — programa indicativo.",
 };
 
 // Congelado: shape antigo do PROGRAMA, usado só pelas propostas arquivadas em
