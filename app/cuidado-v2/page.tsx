@@ -377,6 +377,22 @@ export default function Cuidado() {
               </Reveal>
             ))}
           </div>
+
+          {/* Anfitriãs: fecham a secção, em destaque (maiores) — são as 3
+              organizações que co-criam o evento, cujo texto nos logos
+              (Georgina Angélica, Colo di Mamá) precisa de mais espaço para
+              se ler bem. */}
+          <div className="mt-16">
+            <div className="flex flex-wrap items-center justify-center gap-x-16 gap-y-9">
+              {PARCEIROS.hosts.map((p, i) => (
+                <Reveal key={p.nome} delay={i * 0.06}>
+                  <div className="relative h-16 w-40 opacity-90 grayscale transition hover:opacity-100 hover:grayscale-0 sm:h-20 sm:w-48">
+                    <Image src={BASE + p.logo} alt={p.nome} fill className="object-contain" />
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
