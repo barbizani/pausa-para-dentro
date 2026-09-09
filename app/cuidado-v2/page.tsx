@@ -360,10 +360,17 @@ export default function Cuidado() {
             </h2>
           </Reveal>
           {/* filtro a preto e branco por defeito (uniformiza cores muito
-              diferentes entre logos) — revela a cor real ao passar o rato */}
-          <div className="mt-12 flex flex-wrap items-center justify-center gap-x-10 gap-y-8 md:gap-x-12">
+              diferentes entre logos) — revela a cor real ao passar o rato.
+              Largura em percentagem (2 / 3 / 4 por linha, em vez de deixar
+              o flex-wrap quebrar sozinho) para a última linha ficar sempre
+              centrada como um grupo, nunca com um logo solto e desalinhado. */}
+          <div className="mt-12 flex flex-wrap justify-center gap-x-10 gap-y-10">
             {PARCEIROS.logos.map((p, i) => (
-              <Reveal key={p.nome} delay={i * 0.04}>
+              <Reveal
+                key={p.nome}
+                delay={i * 0.04}
+                className="flex w-[calc(50%-20px)] justify-center sm:w-[calc(33.333%-26.67px)] lg:w-[calc(25%-30px)]"
+              >
                 <div className="relative h-11 w-28 opacity-80 grayscale transition hover:opacity-100 hover:grayscale-0 sm:h-12 sm:w-32">
                   <Image src={BASE + p.logo} alt={p.nome} fill className="object-contain" />
                 </div>
