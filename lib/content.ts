@@ -353,9 +353,19 @@ export const PARCEIROS = {
   eyebrow: "Parceiros",
   title: "Quem torna este dia possível.",
   logos: [
+    // logos dos facilitadores, por ordem de apresentação no programa do dia
+    { nome: "Educar com Amor e Consciência", logo: "/logos/ga.png" },
+    { nome: "UNO Yoga & Breathwork", logo: "/logos/uno-yoga-breathwork.png" },
+    { nome: "Centro Impacto", logo: "/logos/centro-impacto.png" },
+    { nome: "Inês Sottomayor · Arquiteta de Sonhos", logo: "/logos/ines-sottomayor.png" },
+    { nome: "HumanFleet", logo: "/logos/humanfleet.png" },
+    { nome: "Colo di Mamá", logo: "/logos/colodimama.png" },
+    { nome: "Associação Men Talks", logo: "/logos/mentalks.svg" },
+    // restantes parceiros e apoios
     { nome: "Villoo", logo: "/logos/villoo.png" },
     { nome: "Academia Bernardo da Costa", logo: "/logos/academia-bc.png" },
     { nome: "Fundação Maria Droste", logo: "/logos/fundacao-maria-droste.svg" },
+    { nome: "Cristóvão Cunha", logo: "/logos/cristovao-cunha.png" },
   ],
 };
 

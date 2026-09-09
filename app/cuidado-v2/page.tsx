@@ -352,17 +352,19 @@ export default function Cuidado() {
 
       {/* PARCEIROS */}
       <section className="px-6 py-24 md:px-10">
-        <div className="mx-auto max-w-3xl text-center">
+        <div className="mx-auto max-w-4xl text-center">
           <Reveal><Eyebrow>{PARCEIROS.eyebrow}</Eyebrow></Reveal>
           <Reveal>
             <h2 style={{ fontFamily: "var(--font-cormorant)" }} className="mt-5 text-3xl md:text-4xl">
               {PARCEIROS.title}
             </h2>
           </Reveal>
-          <div className="mt-12 flex flex-wrap items-center justify-center gap-x-14 gap-y-8">
+          {/* filtro a preto e branco por defeito (uniformiza cores muito
+              diferentes entre logos) — revela a cor real ao passar o rato */}
+          <div className="mt-12 flex flex-wrap items-center justify-center gap-x-10 gap-y-8 md:gap-x-12">
             {PARCEIROS.logos.map((p, i) => (
-              <Reveal key={p.nome} delay={i * 0.06}>
-                <div className="relative h-12 w-32 opacity-80 grayscale transition hover:opacity-100 hover:grayscale-0 sm:h-14 sm:w-40">
+              <Reveal key={p.nome} delay={i * 0.04}>
+                <div className="relative h-11 w-28 opacity-80 grayscale transition hover:opacity-100 hover:grayscale-0 sm:h-12 sm:w-32">
                   <Image src={BASE + p.logo} alt={p.nome} fill className="object-contain" />
                 </div>
               </Reveal>
