@@ -448,7 +448,6 @@ export default function Cuidado() {
           <img src={BASE + "/logos/colodimama.png"} alt="Colo di Mama" className="h-12 opacity-90" />
           <img src={BASE + "/logos/mentalks-light.png"} alt="Men Talks" className="h-12 opacity-90" />
         </div>
-        <p className="mt-8 text-xs text-white/40">Educar com Amor e Consciência · Colo di Mama · Men Talks</p>
       </footer>
     </main>
   );
