@@ -446,7 +446,7 @@ export default function Cuidado() {
         <div className="mx-auto flex max-w-4xl flex-wrap items-center justify-center gap-10">
           <img src={BASE + "/logos/ga.png"} alt="Educar com Amor e Consciência" className="h-12 opacity-90" />
           <img src={BASE + "/logos/colodimama.png"} alt="Colo di Mama" className="h-12 opacity-90" />
-          <img src={BASE + "/logos/mentalks.svg"} alt="Men Talks" className="h-12 opacity-90" style={{ filter: "brightness(0) invert(1)" }} />
+          <img src={BASE + "/logos/mentalks-light.png"} alt="Men Talks" className="h-12 opacity-90" />
         </div>
         <p className="mt-8 text-xs text-white/40">Educar com Amor e Consciência · Colo di Mama · Men Talks</p>
       </footer>

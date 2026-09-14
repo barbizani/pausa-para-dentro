@@ -53,8 +53,8 @@ export const UNIAO = {
     },
     {
       name: "Men Talks",
-      logo: "/logos/mentalks.svg",
-      text: "Cria espaço para conversas que muitas vezes não acontecem sobre emoções, presença, relações e novas formas de masculinidade consciente. Promove espaços de reflexão sobre masculinidades para construir uma sociedade mais igualitária.",
+      logo: "/logos/mentalks.png",
+      text: "Cria espaço para conversas e reflexões que muitas vezes não acontecem sobre masculinidades, emoções e relações com o objetivo de construir uma sociedade mais igualitária.",
     },
   ],
   close:
@@ -316,7 +316,7 @@ export const FACILITADORES = {
         "Em paralelo, desenvolve iniciativas na área da parentalidade, em escolas e junto de famílias.",
         "Acredita que transformar relações humanas é uma das formas mais poderosas de transformar o mundo.",
       ],
-      organizacao: { nome: "Associação Men Talks", logo: "/logos/mentalks.svg" },
+      organizacao: { nome: "Associação Men Talks", logo: "/logos/mentalks.png" },
     },
     {
       slug: "angela-almeida",
@@ -368,7 +368,7 @@ export const PARCEIROS = {
   hosts: [
     { nome: "Educar com Amor e Consciência", logo: "/logos/ga.png" },
     { nome: "Colo di Mamá", logo: "/logos/colodimama.png" },
-    { nome: "Associação Men Talks", logo: "/logos/mentalks.svg" },
+    { nome: "Associação Men Talks", logo: "/logos/mentalks.png" },
   ],
 };
 
