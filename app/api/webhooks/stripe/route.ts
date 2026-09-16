@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 import { Resend } from "resend";
-import { procurarPorId, marcarComoPago } from "@/lib/sheets";
+import { procurarPorId, marcarComoPago, marcarStatus, RegistoCompleto } from "@/lib/sheets";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 const resend = new Resend(process.env.RESEND_API_KEY!);
@@ -13,44 +13,18 @@ const EMAIL_REMETENTE = process.env.EMAIL_REMETENTE ?? "inscricoes@eventos.menta
 // em bruto (raw), sem o Next.js o converter em JSON automaticamente.
 export const runtime = "nodejs";
 
-export async function POST(req: NextRequest) {
-  const corpo = await req.text();
-  const assinatura = req.headers.get("stripe-signature");
-
-  let evento: Stripe.Event;
-  try {
-    evento = stripe.webhooks.constructEvent(
-      corpo,
-      assinatura!,
-      process.env.STRIPE_WEBHOOK_SECRET!
-    );
-  } catch (erro) {
-    console.error("Assinatura do webhook inválida:", erro);
-    return NextResponse.json({ erro: "assinatura_invalida" }, { status: 400 });
-  }
-
-  if (evento.type !== "checkout.session.completed") {
-    // Não é o evento que nos interessa — responder 200 na mesma para o
-    // Stripe não continuar a reenviar.
-    return NextResponse.json({ recebido: true });
-  }
-
-  const session = evento.data.object as Stripe.Checkout.Session;
-  const registrationId = session.client_reference_id;
-
-  if (!registrationId) {
-    console.error("checkout.session.completed sem client_reference_id:", session.id);
-    // Responder 200 para não gerar retries infinitos — mas isto precisa de
-    // investigação manual (ex. pagamento feito sem passar pelo formulário).
-    return NextResponse.json({ recebido: true, aviso: "sem_registration_id" });
-  }
-
-  const registo = await procurarPorId(registrationId);
-  if (!registo) {
-    console.error("Registo não encontrado para registration_id:", registrationId);
-    return NextResponse.json({ recebido: true, aviso: "registo_nao_encontrado" });
-  }
-
+/**
+ * Marca a inscrição como "Pago" e envia os dois emails de confirmação.
+ * Usado tanto para checkout.session.completed com payment_status "paid"
+ * (cartão) como para checkout.session.async_payment_succeeded (Multibanco
+ * e outros métodos assíncronos, depois de o pagamento ser confirmado).
+ * Cada passo tem o seu próprio try/catch, isolado dos outros.
+ */
+async function confirmarPagamento(
+  session: Stripe.Checkout.Session,
+  registo: RegistoCompleto,
+  registrationId: string
+) {
   try {
     await marcarComoPago(registo.linhaIndex, {
       stripeSessionId: session.id,
@@ -125,6 +99,83 @@ export async function POST(req: NextRequest) {
   } catch (erro) {
     console.error(`[email participante] falhou para registration_id ${registrationId}:`, erro);
   }
+}
+
+export async function POST(req: NextRequest) {
+  const corpo = await req.text();
+  const assinatura = req.headers.get("stripe-signature");
+
+  let evento: Stripe.Event;
+  try {
+    evento = stripe.webhooks.constructEvent(
+      corpo,
+      assinatura!,
+      process.env.STRIPE_WEBHOOK_SECRET!
+    );
+  } catch (erro) {
+    console.error("Assinatura do webhook inválida:", erro);
+    return NextResponse.json({ erro: "assinatura_invalida" }, { status: 400 });
+  }
+
+  const EVENTOS_TRATADOS = [
+    "checkout.session.completed",
+    "checkout.session.async_payment_succeeded",
+    "checkout.session.async_payment_failed",
+  ] as const;
+
+  if (!EVENTOS_TRATADOS.includes(evento.type as (typeof EVENTOS_TRATADOS)[number])) {
+    // Não é um evento que nos interessa — responder 200 na mesma para o
+    // Stripe não continuar a reenviar.
+    return NextResponse.json({ recebido: true });
+  }
+
+  const session = evento.data.object as Stripe.Checkout.Session;
+  const registrationId = session.client_reference_id;
+
+  if (!registrationId) {
+    console.error(`${evento.type} sem client_reference_id:`, session.id);
+    // Responder 200 para não gerar retries infinitos — mas isto precisa de
+    // investigação manual (ex. pagamento feito sem passar pelo formulário).
+    return NextResponse.json({ recebido: true, aviso: "sem_registration_id" });
+  }
+
+  const registo = await procurarPorId(registrationId);
+  if (!registo) {
+    console.error(`Registo não encontrado para registration_id (${evento.type}):`, registrationId);
+    return NextResponse.json({ recebido: true, aviso: "registo_nao_encontrado" });
+  }
+
+  // checkout.session.async_payment_failed: pagamento assíncrono (ex. referência
+  // Multibanco) falhou ou expirou sem ser pago. Só atualiza o status — sem email.
+  if (evento.type === "checkout.session.async_payment_failed") {
+    try {
+      await marcarStatus(registo.linhaIndex, "Falhou");
+    } catch (erro) {
+      console.error(`[marcarStatus:Falhou] falhou para registration_id ${registrationId}:`, erro);
+    }
+    return NextResponse.json({ recebido: true });
+  }
+
+  // checkout.session.async_payment_succeeded: o pagamento assíncrono (Multibanco,
+  // etc.) foi confirmado — trata-se exatamente como um pagamento bem-sucedido.
+  if (evento.type === "checkout.session.async_payment_succeeded") {
+    await confirmarPagamento(session, registo, registrationId);
+    return NextResponse.json({ recebido: true });
+  }
+
+  // checkout.session.completed: para métodos síncronos (cartão) já vem com
+  // payment_status "paid". Para métodos assíncronos (Multibanco, etc.), vem
+  // "unpaid" — a confirmação real só chega depois, via async_payment_succeeded.
+  // Sem esta verificação, uma referência Multibanco por pagar era tratada como
+  // paga assim que gerada (bug já identificado em produção).
+  if (session.payment_status !== "paid") {
+    console.log(
+      `[checkout.session.completed] payment_status="${session.payment_status}" — pagamento assíncrono ainda pendente, mantém-se "Pendente" (registration_id ${registrationId}).`
+    );
+    return NextResponse.json({ recebido: true });
+  }
+
+  await confirmarPagamento(session, registo, registrationId);
 
   return NextResponse.json({ recebido: true });
 }

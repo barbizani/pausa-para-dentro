@@ -195,6 +195,21 @@ export async function procurarPorId(
 }
 
 /**
+ * Atualiza só a coluna de status (ex.: "Falhou", depois de
+ * checkout.session.async_payment_failed) — sem tocar nas colunas de
+ * pagamento, que só fazem sentido quando o pagamento é confirmado.
+ */
+export async function marcarStatus(linhaIndex: number, status: string) {
+  const sheets = getSheets();
+  await sheets.spreadsheets.values.update({
+    spreadsheetId: process.env.GOOGLE_SHEET_ID,
+    range: `${SHEET_NAME}!C${linhaIndex}:C${linhaIndex}`,
+    valueInputOption: "USER_ENTERED",
+    requestBody: { values: [[status]] },
+  });
+}
+
+/**
  * Marca um registo como "Pago" depois de confirmação via webhook.
  */
 export async function marcarComoPago(
