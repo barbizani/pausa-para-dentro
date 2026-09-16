@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { Reveal } from "@/components/Reveal";
 import { FacilitadorCard } from "@/components/FacilitadorCard";
+import { FaqItem } from "@/components/FaqItem";
 import { InscricaoForm } from "@/components/InscricaoForm";
 import {
   EVENT,
@@ -17,6 +18,7 @@ import {
   FACILITADORES,
   PARCEIROS,
   QUEM,
+  FAQ,
   FINAL,
 } from "@/lib/content";
 
@@ -414,6 +416,21 @@ export default function Cuidado() {
               </Reveal>
             ))}
           </ul>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="px-6 py-28 md:px-10 md:py-36" style={{ background: "linear-gradient(180deg,#f3f5f2,#eaf0eb)" }}>
+        <div className="mx-auto max-w-2xl">
+          <Reveal><Eyebrow>{FAQ.eyebrow}</Eyebrow></Reveal>
+          <Reveal><h2 style={{ fontFamily: "var(--font-cormorant)" }} className="mt-6 text-4xl md:text-5xl">{FAQ.title}</h2></Reveal>
+          <div className="mt-10 border-t" style={{ borderColor: "rgba(35,77,87,.15)" }}>
+            {FAQ.items.map((item, i) => (
+              <Reveal key={item.pergunta} delay={i * 0.04}>
+                <FaqItem pergunta={item.pergunta} resposta={item.resposta} />
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 

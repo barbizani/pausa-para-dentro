@@ -391,6 +391,49 @@ export const QUEM = {
   ],
 };
 
+export const FAQ = {
+  eyebrow: "Dúvidas",
+  title: "Perguntas frequentes.",
+  items: [
+    {
+      pergunta: "Como funciona o pagamento?",
+      resposta:
+        "A inscrição é feita diretamente no site, com pagamento por cartão ou Multibanco. Após o pagamento, recebes um email de confirmação com todos os detalhes do dia, e um recibo automático da nossa plataforma de pagamentos.",
+    },
+    {
+      pergunta: "O que está incluído no valor da inscrição?",
+      resposta:
+        "Um dia completo de workshops, círculos de partilha e práticas guiadas, além do almoço consciente. Os detalhes do programa estão disponíveis mais acima nesta página.",
+    },
+    {
+      pergunta: "Onde e a que horas é o evento?",
+      resposta: "Fundação Maria Droste, Lisboa, das 10h às 17h, no dia 24 de outubro de 2026.",
+    },
+    {
+      pergunta: "Até quando posso inscrever-me?",
+      resposta:
+        "As inscrições encerram às 23h59 do dia 23 de outubro. Não são aceites inscrições no próprio dia do evento.",
+    },
+    {
+      pergunta: "Há lugares limitados?",
+      resposta: "Sim, o número de lugares é limitado — recomendamos inscrever-te com antecedência.",
+    },
+    {
+      pergunta: "Posso cancelar a minha inscrição?",
+      resposta:
+        "Sim, até 7 dias antes do evento (até 17 de outubro), com reembolso total. Envia um email para info@georginangelica.com com o teu nome e os dados da inscrição.",
+    },
+    {
+      pergunta: "Esqueci-me de indicar o meu NIF na inscrição, o que faço?",
+      resposta: "Sem problema — envia-nos o teu NIF para info@georginangelica.com e associamos à tua inscrição.",
+    },
+    {
+      pergunta: "Tenho uma dúvida que não está aqui, a quem contacto?",
+      resposta: "Escreve-nos para info@georginangelica.com.",
+    },
+  ],
+};
+
 export const FINAL = {
   titleA: "Não precisas de fazer mais.",
   titleB: "Precisas de parar.",
