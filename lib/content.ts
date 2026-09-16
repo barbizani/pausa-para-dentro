@@ -14,6 +14,11 @@ export const EVENT = {
   impact: "Porque cuidar dos outros começa por conseguir parar.",
   cta: "Quero participar",
   ctaFinal: "Quero fazer parte",
+  // Preço atual da inscrição. Escalonado por data (37€ até 30/set, 47€ de
+  // 1 a 22/out), mas a troca é feita à mão pela Georgina no dia — não há
+  // lógica de datas no código. Mudar só este valor + STRIPE_PAYMENT_LINK_URL
+  // na Vercel quando o preço subir.
+  preco: 37,
 };
 
 export const CONTEXT = {

@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { Reveal } from "@/components/Reveal";
 import { FacilitadorCard } from "@/components/FacilitadorCard";
+import { InscricaoForm } from "@/components/InscricaoForm";
 import {
   EVENT,
   CONTEXT,
@@ -46,6 +47,7 @@ function Eyebrow({ children, light = false }: { children: string; light?: boolea
 
 export default function Cuidado() {
   const [scrolled, setScrolled] = useState(false);
+  const [inscricaoAberta, setInscricaoAberta] = useState(false);
   const heroRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], [0, 160]);
@@ -431,10 +433,14 @@ export default function Cuidado() {
               <div className="text-[11.5px] uppercase tracking-[0.24em]" style={{ color: T.sage }}>Inscrição</div>
               <div style={{ fontFamily: "var(--font-cormorant)" }} className="mt-4 text-3xl italic">Pausa para Dentro</div>
               <div className="mt-2 text-sm text-white/65">{EVENT.date} · {EVENT.place}, {EVENT.city}</div>
-              {/* placeholder — ligar ao checkout de pagamento */}
-              <a href="#" data-checkout className="mt-8 inline-flex items-center gap-3 rounded-full px-10 py-4 text-sm font-medium text-white transition-transform hover:-translate-y-0.5" style={{ background: T.sage, color: T.deep }}>
+              <button
+                type="button"
+                onClick={() => setInscricaoAberta(true)}
+                className="mt-8 inline-flex items-center gap-3 rounded-full px-10 py-4 text-sm font-medium text-white transition-transform hover:-translate-y-0.5"
+                style={{ background: T.sage, color: T.deep }}
+              >
                 {EVENT.ctaFinal} → garantir o meu lugar
-              </a>
+              </button>
               <div className="mt-5 text-xs text-white/45">{FINAL.micro}</div>
             </div>
           </Reveal>
@@ -449,6 +455,8 @@ export default function Cuidado() {
           <img src={BASE + "/logos/mentalks-light.png"} alt="Men Talks" className="h-12 opacity-90" />
         </div>
       </footer>
+
+      <InscricaoForm open={inscricaoAberta} onClose={() => setInscricaoAberta(false)} />
     </main>
   );
 }
